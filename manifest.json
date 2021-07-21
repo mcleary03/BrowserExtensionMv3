@@ -1,0 +1,26 @@
+{
+  "name": "My Extension with API",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Experimental api for extensions",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/snoopy.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ]
+}
